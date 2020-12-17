@@ -1,6 +1,5 @@
 package Project.ASTARWithClosed;
 
-import Project.ASTAR.AStar;
 import Project.Node;
 import Project.PuzzleSix;
 import org.junit.Test;

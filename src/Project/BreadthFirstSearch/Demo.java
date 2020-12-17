@@ -1,6 +1,5 @@
 package Project.BreadthFirstSearch;
 
-import Project.ASTARWithClosed.AStarClosed;
 import Project.Node;
 import Project.PuzzleSix;
 import org.junit.Test;
