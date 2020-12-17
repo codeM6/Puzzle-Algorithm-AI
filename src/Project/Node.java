@@ -1,4 +1,4 @@
-package ASTAR;
+package Project;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,7 @@ public class Node {
     private Node father;
     private String operator;
 
-    /** Constructor that evaluates g, depth and f, depending on a Node having a father or being a father.
+    /** Constructor that evaluates g, depth and f, depending on a Project.Node having a father or being a father.
      * @param state: current state of the node.
      * @param father: the father of the node.
      * @param cost: cost of the node. */
@@ -38,7 +38,7 @@ public class Node {
     public double getF() { return f; }
     public double getH() { return h; }
 
-    /** Gets the Node's successors as leaves and stores them in an ArrayList to return.
+    /** Gets the Project.Node's successors as leaves and stores them in an ArrayList to return.
      * @return ArrayList of nodes with the successor nodes. */
     public ArrayList<Node> getSuccessors() {
         ArrayList<Node> suc = new ArrayList<>();

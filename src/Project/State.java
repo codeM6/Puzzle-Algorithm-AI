@@ -1,4 +1,4 @@
-package ASTAR;
+package Project;
 
 import java.util.ArrayList;
 

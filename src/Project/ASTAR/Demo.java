@@ -1,8 +1,8 @@
-package ASTAR;
+package Project.ASTAR;
 
+import Project.Node;
+import Project.PuzzleSix;
 import org.junit.Test;
-
-import java.util.Calendar;
 
 public class Demo {
 

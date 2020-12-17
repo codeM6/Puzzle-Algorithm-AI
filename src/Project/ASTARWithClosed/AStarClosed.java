@@ -1,21 +1,29 @@
-package ASTAR;
+package Project.ASTARWithClosed;
+
+import Project.Node;
+import Project.State;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
-public class AStar {
+public class AStarClosed {
 
-    private int nodeCount;
-    private ArrayList<Node> neighbours;
+    public int nodeCount;
+    public ArrayList<Node> neighbours;
+    public Set<State> CLOSED;
 
-    /** AStar constructor.
-     * Initializes the neighbours ArrayList and adds the new Node (initial game board) to it.
+    /** A* Constructor with closed state.
+     * Initializes the neighbours ArrayList adds the board to it.
+     * Initializes the CLOSED state.
      * Initializes nodeCount.
-     * @param initial: contains initial game board. */
-    public AStar(ArrayList<State> initial) {
-        neighbours = new ArrayList<Node>();
+     * @param initial: Initial board. */
+    public AStarClosed(ArrayList<State> initial) {
+        neighbours = new ArrayList<>();
+        CLOSED = new HashSet<>();
 
-        for(State state: initial) {
-            neighbours.add(new Node(state, null, 0));
+        for (State state: initial) {
+            addNeighbours(new Node(state, null, 0));
         }
 
         nodeCount = 0;
@@ -34,6 +42,8 @@ public class AStar {
 
         while (node != null) {
 
+            CLOSED.add(node.getState());
+
             if (node.getState().goal()) {
                 System.out.println("Path till solution: ");
                 return node;
@@ -43,16 +53,19 @@ public class AStar {
 
             ArrayList<Node> successors = node.getSuccessors();
             for (Node nodeSuc : successors) {
+                if (CLOSED.contains(nodeSuc.getState())) continue;
                 addNeighbours(nodeSuc);
             }
 
             if (neighbours.isEmpty()) return null;
-            else { node = neighbours.remove(0); }
+            else {
+                node = neighbours.remove(0);
+                CLOSED.add(node.getState());
+            }
         }
 
         return null;
     }
-
 
     /** Helper method to add and remove neighbours from the ArrayList.
      * @param node: node to add.*/

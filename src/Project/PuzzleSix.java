@@ -1,10 +1,10 @@
-package ASTAR;
+package Project;
 
 import java.util.ArrayList;
 
-/** Implements State which helps A* solve the puzzle.
+/** Implements Project.State which helps A* solve the puzzle.
  * Contains the function that determines the successors, the goal check, heuristics and the initial board.
- * @see State: Implemented interface. */
+ * @see State : Implemented interface. */
 public class PuzzleSix implements State {
 
     private int[][] puzzle;
@@ -49,7 +49,7 @@ public class PuzzleSix implements State {
 
     /** Determines the possible successors for each state.
      * This function needs one implementation for each specific puzzle case.
-     * @return ArrayList<Action> containing all the possible actions. */
+     * @return ArrayList<Project.Action> containing all the possible actions. */
     @Override
     public ArrayList<Action> suc() {
 
@@ -141,9 +141,9 @@ public class PuzzleSix implements State {
     @Override
     public boolean equals(Object p) {
 
-        if (p == null) return false;
-        if (p.getClass() != PuzzleSix.class) return false;
         if (this == p) return true;
+        if (p == null) return false;
+        if (p.getClass() != getClass()) return false;
 
         PuzzleSix pp = (PuzzleSix) p;
 
@@ -154,6 +154,20 @@ public class PuzzleSix implements State {
         }
 
         return true;
+    }
+
+    /** Associates to each object a distinctive number. */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 0;
+        for (int i = 0; i < 2; i++) {
+            for (int a = 0; a < 3; a++) {
+                result = a + i * prime;
+            }
+        }
+
+        return result;
     }
 
     @Override

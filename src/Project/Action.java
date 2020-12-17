@@ -1,6 +1,6 @@
-package ASTAR;
+package Project;
 
-/** Action class represents an action.
+/** Project.Action class represents an action.
  * In our specific game an action can be made when there's a white space (-1) in the matrix
  * @var state: the state of the puzzle.
  * @var cost: the cost for the action.
