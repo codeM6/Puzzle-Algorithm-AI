@@ -10,10 +10,14 @@ public class BFS {
     private ArrayList<Node> neighbours;
     private int nodeCount;
 
-    public BFS(ArrayList<State> initials) {
+    /** BFS Constructor.
+     * Initializes the neighbours ArrayList adds the board to it.
+     * Initializes nodeCount.
+     * @param initial: Initial board. */
+    public BFS(ArrayList<State> initial) {
         neighbours = new ArrayList<Node>();
 
-        for (State state : initials) {
+        for (State state : initial) {
             neighbours.add(new Node(state, null, 0));
         }
 
@@ -22,6 +26,11 @@ public class BFS {
 
     public int getNodeCount() { return nodeCount; }
 
+    /** BFS Algorithm.
+     * From an initial node, it expands it's successors onto the suc list.
+     * Until the list is empty, for each node inside the list, we check if it is the goal node and
+     * add it to the neighbours list.
+     * @return the found node with the solution or null. */
     public Node solve() {
 
         nodeCount = 0;
