@@ -28,7 +28,7 @@ If you test these out there's massive efficiency differences. In my cpu I've fou
 
 ## Class Diagram:
 
-![Diagram Class](C:/Users/berna/OneDrive/Desktop/Adventures/Dev/Puzzle Algorithm AI/Github/xd.png)  
+![Diagram Class](Github/ClassDiagram.png)  
 
 ## Class description
 
