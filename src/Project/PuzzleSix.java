@@ -29,8 +29,8 @@ public class PuzzleSix implements State {
                 {0, 0, -1}
         };
 
-        for (int i=0; i<4; i++) {
-            for (int a=0; a<3; a++) {
+        for (int i=0; i<3; i++) {
+            for (int a=0; a<2; a++) {
                 if (puzzle[i][a] != solution[i][a]) h++;
             }
         }
