@@ -22,12 +22,14 @@ public class Node {
         if (father == null) {
             g = 0;
             depth = 1;
+            f = 0 + state.h();
         }
         else {
             g = father.getG() + cost;
             depth = father.getDepth() + 1;
+            if (father.getF() > f) { f = father.getF(); }
         }
-
+        this.operator = "";
         f = g + h;
     }
 
